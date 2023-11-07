@@ -1,0 +1,348 @@
+body{
+    font-family: 'Rubik', sans-serif;
+}
+
+.play-banner-sec {
+    background-image: url(../img/gamePlay.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 720px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+}
+.play-banner-sec .inner-banner-blog {
+    position: absolute;
+    bottom: 6%;
+    max-width: 750px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.inner-banner-blog .logo{
+    height: 120px;
+    margin: 0 auto 30px;
+}
+.play-banner-sec .inner-banner-blog h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 80%;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+    text-align: center;
+    text-shadow: 2px 2px #002e5b;
+}
+.play-banner-sec .inner-banner-blog h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    text-align: center;
+    line-height: 120%;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+}
+.play-banner-sec .inner-banner-blog p {
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+    line-height: 150%;
+    opacity: 0.7;
+    color: #FFFFFF;
+}
+.hexa-tile-sec {
+    padding: 60px 0;
+}
+.play-sec-new {
+    background-color: #eee;
+    margin: 0px 0;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.blog-inner-box {
+    margin-bottom: 25px;
+}
+.blog-inner-box img {
+    border-radius: 10px;
+    border: 1px solid #3a3939;
+    margin-bottom: 25px;
+    height: 250px;
+    width: 100%;
+    object-fit: fill;
+}
+.blog-inner-box h4 {
+    color: #002e5b;
+}
+.blog-inner-box p {
+    font-size: 16px;
+    color: #000;
+}
+.common-play-btn {
+    padding: 5px 15px !important;
+    background-color: #002e5b !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    cursor: pointer !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+}
+.new-box-benefit .underline {
+    border-bottom: 1px solid #002e5b;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.extra-links {
+    text-decoration: none !important;
+    color: #000 !important;
+    margin: 0 20px;
+    font-weight: 600;
+}
+.filter-inner-prediction h2.text-white{
+    color: #002e5b !important;
+}
+
+@media (max-width:768px) {
+    .blog-big-img.details-blog img {
+        float: none;
+        margin-right: 0px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    .blog-big-img h6 {
+        font-size: 14px;
+        margin-top: 0px;
+    }
+
+    .blogs-inner-box li {
+        width: 100%;
+    }
+
+    .blogs-inner-box li>div img {
+        height: auto;
+        width: 100%;
+        margin: 0;
+    }
+
+    .blogs-inner-box li>div>div {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .blogs-inner-box li>div {
+        margin: 15px 0;
+    }
+
+    .blogs-heading {
+        font-size: 30px;
+    }
+
+    .blogs-sec {
+        padding: 30px 0;
+    }
+
+    .extra-links {
+        margin: 0 5px;
+        font-size: 12px;
+    }
+
+    .common-btn {
+        padding: 3px 5px !important;
+        font-size: 12px !important;
+        line-height: 14px !important;
+    }
+    
+   
+
+    .blog-big-img.details-blog {
+        margin-top: 0;
+    }
+
+    .blog-big-img.details-blog h4 {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .blog-big-img p {
+        font-size: 12px;
+    }
+
+    .blog-big-img.details-blog h5 {
+
+        font-size: 14px;
+    }
+
+    .blogs-banner-sec .inner-banner-blog h1 {
+        font-size: 45px;
+        margin-bottom: 25px;
+    }
+
+    .blogs-banner-sec .inner-banner-blog p {
+        font-size: 12px;
+    }
+
+    .blogs-banner-sec {
+        min-height: 40vh;
+    }
+    .play-banner-sec {
+        min-height: 40vh;
+    }
+    .inner-banner-blog .logo {
+        height: 40px;
+        margin: 0 auto 10px;
+    }
+    .new-games-link {
+        padding: 15px 0;
+    }
+    .play-heading h2 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #002e5b !important;
+    }
+    .new-games-link {
+        padding: 60px 0;
+        background-color: #eee;
+    }
+
+    .play-banner-sec .inner-banner-blog h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+    .play-banner-sec .inner-banner-blog h3 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+    .play-banner-sec .inner-banner-blog p {
+        font-size: 12px;
+    }
+
+    .play-banner-sec {
+        min-height: 40vh;
+    }
+
+    .blogs-heading {
+        font-size: 20px;
+    }
+
+    .blog-big-img h4 {
+        font-size: 18px;
+    }
+
+    .blog-big-img p {
+        font-size: 12px;
+    }
+
+    .blogs-inner-box {
+        max-height: initial;
+    }
+
+    .blogs-inner-box li>div h4 {
+        font-size: 18px;
+    }
+    .slider-game .slick-slide img {
+        height: auto;
+        width: 100% !important;
+        object-fit: cover;
+        border: 1px solid #002e5b;
+        border-radius: 10px;
+        padding: 10px;
+        display: inline-block;
+    }
+    .slider-game .slick-slide img {
+        padding: 5px;
+    }
+    .slider-game .slick-slide {
+        padding: 5px;
+    }
+    .slick-dots, .slick-next, .slick-prev {
+        position: absolute;
+        display: block;
+        padding: 0;
+    }
+
+    .slider-game .slick-next, .slider-game .slick-prev {
+        top: 40%;
+        height: 30px;
+        width: 30px;
+        opacity: 1;
+        font-size: 0;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #002e5b !important;
+        padding: 10px !important;
+        border-radius: 4px;
+    }
+    .slider-game .slick-prev {
+        left: -5px;
+        z-index: 10;
+    }
+    .slider-game .slick-next, .slider-game .slick-prev {
+        height: 22px;
+        width: 22px;
+    }
+    .slider-game .slick-next:before, .slider-game .slick-prev:before {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 60%;
+        width: 60%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 4px;
+        bottom: 0;
+        margin: 0 auto;
+    }
+    .slider-game .slick-prev:before {
+        content: '';
+        background-image: url(/public/assets/img/pre-left.png);
+        left: -2px;
+    }
+    .slider-game .slick-next:before {
+        content: '';
+        background-image: url(/public/assets/img/pre-right.png);
+        right: -2px;
+    }
+    .slider-game .slick-next {
+        right: -5px;
+        z-index: 10;
+    }
+    .slider-game .slick-slide > div > div p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-shadow: 1px 1px #002e5b;
+        font-weight: 600;
+        font-size: 10px;
+        background-color: #002e5b;
+        padding: 3px;
+        color: #fff;
+        text-align: center;
+    }
+    .slider-game .slick-slide > div > div {
+        position: relative;
+        overflow: hidden;
+    }
+    .play-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .play-heading h2 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .play-heading p {
+        font-size: 12px;
+    }
+}

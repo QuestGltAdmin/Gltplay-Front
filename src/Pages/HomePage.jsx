@@ -168,6 +168,7 @@ export const HomePage = () => {
             <Row className="align-items-center">
               <Col md="7" className="m-auto">
                 <div className="inner-banner-blog">
+                  <img src="assets/img/Whitelogo.png" className="logo" alt="" />
                   <h1 className="heading-main">PLAY GAMES</h1>
                   <h3>FOR FREE</h3>
                   <p>
