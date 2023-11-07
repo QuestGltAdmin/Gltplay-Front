@@ -94,12 +94,13 @@ export const HomePage = () => {
       );
       if (data_game.status === 200) {
         setDisable(false);
-        // window.location.assign(data_game?.data?.SessionUrl , "_blank")
-        const a = document.createElement("a");
-        a.setAttribute("href", data_game?.data?.SessionUrl);
-        a.setAttribute("target", "_blank");
-        a.click();
-
+        const browserType = navigator.userAgent;
+        console.log("browserType",browserType);
+        if (browserType.includes("Safari")) {
+          window.location.assign(data_game?.data?.SessionUrl, "_blank")
+        } else {
+          window.open(data_game?.data?.SessionUrl, "_blank");
+        }
         //   setTimeout(() => {
         //      window.open(data_game?.data?.SessionUrl, "_blank");
         // })
@@ -195,37 +196,37 @@ export const HomePage = () => {
                   <Row className="">
                     {Games?.Games !== undefined && Games?.Games?.length > 0
                       ? Games?.Games?.map((items, index) => {
-                          return (
-                            <Col lg={4} md={4} sm={6} xs={6} key={index}>
-                              <div className="blog-inner-box">
-                                <img
-                                  src={
-                                    items?.imageurl
-                                      ? items?.imageurl
-                                      : "https://mascot.games/images/game_hellowin.jpeg"
-                                  }
-                                  className="img-fluid"
-                                />
+                        return (
+                          <Col lg={4} md={4} sm={6} xs={6} key={index}>
+                            <div className="blog-inner-box">
+                              <img
+                                src={
+                                  items?.imageurl
+                                    ? items?.imageurl
+                                    : "https://mascot.games/images/game_hellowin.jpeg"
+                                }
+                                className="img-fluid"
+                              />
 
-                                <div className="d-flex flex-game align-items-center mb-1">
-                                  {/* <p className="mb-0"></p> */}
-                                  <h4>{items.Name}</h4>
-                                  <a
-                                    onClick={() => {
-                                      TransferData(items);
-                                    }}
-                                    // href={items.url}
-                                    // target="_blank"
-                                    className="common-play-btn"
-                                  >
-                                    Play Demo
-                                  </a>
-                                </div>
-                                {/* <p>{items.Description}</p> */}
+                              <div className="d-flex flex-game align-items-center mb-1">
+                                {/* <p className="mb-0"></p> */}
+                                <h4>{items.Name}</h4>
+                                <a
+                                  onClick={() => {
+                                    TransferData(items);
+                                  }}
+                                  // href={items.url}
+                                  // target="_blank"
+                                  className="common-play-btn"
+                                >
+                                  Play Demo
+                                </a>
                               </div>
-                            </Col>
-                          );
-                        })
+                              {/* <p>{items.Description}</p> */}
+                            </div>
+                          </Col>
+                        );
+                      })
                       : ""}
                   </Row>
                 </Col>
