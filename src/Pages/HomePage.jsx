@@ -94,7 +94,10 @@ export const HomePage = () => {
       );
       if (data_game.status === 200) {
         setDisable(false);
-        window.open(data_game?.data?.SessionUrl, "_blank");
+        window.location.assign(data_game?.data?.SessionUrl , "_blank")
+      //   setTimeout(() => {
+      //      window.open(data_game?.data?.SessionUrl, "_blank");
+      // })
       }
       // console.log("dayta", data_game);
     } catch (err) {
@@ -160,8 +163,8 @@ export const HomePage = () => {
               <Col md="7" className="m-auto">
                 <div className="inner-banner-blog">
                   <img src="assets/img/Whitelogo.png" className="logo" alt="" />
-                  <h1 className="heading-main">PLAY GAMES</h1>
-                  <h3>FOR FREE</h3>
+                  <h1 className="heading-main">GLT Play</h1>
+                  <h3>PLAY GAMES FOR FREE</h3>
                   <p>
                     Enjoy a wide variety of games and immerse yourself in
                     endless hours of entertainment
@@ -210,7 +213,7 @@ export const HomePage = () => {
                                     // target="_blank"
                                     className="common-play-btn"
                                   >
-                                    Play
+                                    Play Demo
                                   </a>
                                 </div>
                                 {/* <p>{items.Description}</p> */}
