@@ -377,6 +377,7 @@ body{
     .video-new-game {
         min-height: 40vh;
         width: 100%;
+        height: auto;
     }
     .play-banner-sec {
         min-height: 40vh;
