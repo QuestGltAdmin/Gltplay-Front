@@ -372,3 +372,14 @@ body{
     top: 0;
     bottom: 0;
 }
+
+@media (max-width:768px){
+    .video-new-game {
+        min-height: 40vh;
+        width: 100%;
+    }
+    .play-banner-sec {
+        min-height: 40vh;
+        line-height: 0;
+    }
+}
