@@ -94,10 +94,15 @@ export const HomePage = () => {
       );
       if (data_game.status === 200) {
         setDisable(false);
-        window.location.assign(data_game?.data?.SessionUrl , "_blank")
-      //   setTimeout(() => {
-      //      window.open(data_game?.data?.SessionUrl, "_blank");
-      // })
+        // window.location.assign(data_game?.data?.SessionUrl , "_blank")
+        const a = document.createElement("a");
+        a.setAttribute("href", data_game?.data?.SessionUrl);
+        a.setAttribute("target", "_blank");
+        a.click();
+
+        //   setTimeout(() => {
+        //      window.open(data_game?.data?.SessionUrl, "_blank");
+        // })
       }
       // console.log("dayta", data_game);
     } catch (err) {
@@ -201,7 +206,7 @@ export const HomePage = () => {
                                   }
                                   className="img-fluid"
                                 />
-                                
+
                                 <div className="d-flex flex-game align-items-center mb-1">
                                   {/* <p className="mb-0"></p> */}
                                   <h4>{items.Name}</h4>
