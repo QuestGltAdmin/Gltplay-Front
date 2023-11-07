@@ -94,7 +94,11 @@ export const HomePage = () => {
       );
       if (data_game.status === 200) {
         setDisable(false);
-        window.open(data_game?.data?.SessionUrl, "_blank");
+        // window.location.assign(data_game?.data?.SessionUrl , "_blank")
+        setTimeout(() => {
+           window.open(data_game?.data?.SessionUrl, "_blank");
+          // window.open(url, '_blank');
+      })
       }
       // console.log("dayta", data_game);
     } catch (err) {
