@@ -13,8 +13,11 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 // import { Header } from "../components/UI/Header";
 import Slider from "react-slick";
+import Games from "../Helpers/GameList.json";
+import { IphoneSpinner } from "../Components/IphoneSpinner";
 
 export const HomePage = () => {
+  // console.log("Games", Games.Games);
   //====================Global variable=======================//
   const navigate = useNavigate();
 
@@ -41,6 +44,7 @@ export const HomePage = () => {
     setCommonModel(false);
     // props.action_mo = false
   };
+  const [disable, setDisable] = useState(false);
 
   //===============End of code====================//
 
@@ -58,55 +62,44 @@ export const HomePage = () => {
     getGameData();
   }, [filterData]);
   const getGameData = async () => {
-    if (forMobileView === true) {
-      const api = await axios.get("https://pub.gamezop.com/v3/games?id=6297");
-      // console.log(api);
-      const actionFilter = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === "Action";
-      });
-      setActionData(actionFilter);
-      const adventureFilter = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === "Adventure";
-      });
-      setAdventureData(adventureFilter);
-      const sportsFilter = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === "Sports & Racing";
-      });
-      setSportsData(sportsFilter);
-      const logicFilter = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === "Puzzle & Logic";
-      });
-      setLogicData(logicFilter);
-      const strategyFilter = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === "Strategy";
-      });
-      setStrategyData(strategyFilter);
-      const arcadeFilter = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === "Arcade";
-      });
-      setArcadeData(arcadeFilter);
+    const api = await axios.get("https://pub.gamezop.com/v3/games?id=6297");
+    // console.log(api);
+    const cata = api.data.games.filter((items, index) => {
+      return items.categories.en[0] === filterData;
+    });
+    if (filterData === "") {
+      setOrderList(api.data.games);
+      setGameData(api.data.games);
     } else {
-      const api = await axios.get("https://pub.gamezop.com/v3/games?id=6297");
-      console.log(api);
-      const cata = api.data.games.filter((items, index) => {
-        return items.categories.en[0] === filterData;
-      });
-      if (filterData === "") {
-        setOrderList(api.data.games);
-        setGameData(api.data.games);
-      } else {
-        setGameData(cata);
-      }
+      setGameData(cata);
     }
   };
   //===============End of code====================//
 
   //===============Code for transfer data to play field====================//
-  const TransferData = (items) => {
-    setUrlData(items);
-
-    window.open(`https://games.skormetaverse.io/g/${items.code}`, "_self");
-    // navigate("/playfield", { state: { url: items.url , gamename : items.name.en } });
+  const TransferData = async (items) => {
+    try {
+      setDisable(true);
+      const payload = {
+        jsonrpc: "2.0",
+        method: "Session.CreateDemo",
+        id: 321864203,
+        BankGroupId: "198765432",
+        GameId: items.Id,
+        StartBalance: 10000,
+      };
+      const data_game = await axios.post(
+        "https://api.gltplay.com/common.php",
+        payload
+      );
+      if (data_game.status === 200) {
+        setDisable(false);
+        window.open(data_game?.data?.SessionUrl, "_blank");
+      }
+      // console.log("dayta", data_game);
+    } catch (err) {
+      setDisable(false);
+    }
   };
   //===============End of code====================//
 
@@ -159,11 +152,6 @@ export const HomePage = () => {
       <div className="outer-main-sec">
         {/* <Header /> */}
         <section className="play-banner-sec">
-          {/* <Notification
-            message_mo={modelMessage}
-            action_mo={openModel}
-            random_val={randomVal}
-          /> */}
           <Container>
             <Row className="align-items-center">
               <Col md="7" className="m-auto">
@@ -181,912 +169,25 @@ export const HomePage = () => {
           </Container>
         </section>
 
-        {/* for mobile view */}
-
-        {forMobileView === true ? (
-          <section className="new-games-link">
-            <Container>
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Top Games</h2>
-                  </div>
-                  <Slider className="slider-game" {...settings}>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/S1Wrpf1v5ym",
-                            "_self"
-                          );
-                        }}
-                        // href="https://games.skormetaverse.io/g/S1Wrpf1v5ym"
-                      >
-                        <img
-                          src="https://static.gamezop.com/S1Wrpf1v5ym/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-
-                      <p>Box Crush</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/HJP4afkvqJQ",
-                            "_self"
-                          );
-                        }}
-                        //  href="https://games.skormetaverse.io/g/HJP4afkvqJQ"
-                      >
-                        <img
-                          src="https://static.gamezop.com/HJP4afkvqJQ/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>City Cricket</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/B1fSpMkP51m",
-                            "_self"
-                          );
-                        }}
-                        //  href="https://games.skormetaverse.io/g/B1fSpMkP51m"
-                      >
-                        <img
-                          src="https://static.gamezop.com/B1fSpMkP51m/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Bottle Shoot</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/H1Tz6z1Dqym",
-                            "_self"
-                          );
-                        }}
-                        // href="https://games.skormetaverse.io/g/H1Tz6z1Dqym"
-                      >
-                        <img
-                          src="https://static.gamezop.com/H1Tz6z1Dqym/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Bouncy</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/BkdJhTX50B",
-                            "_self"
-                          );
-                        }}
-                        //  href="https://games.skormetaverse.io/g/BkdJhTX50B"
-                      >
-                        <img
-                          src="https://static.gamezop.com/BkdJhTX50B/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Bowling Stars</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/SkJf58Ouf0",
-                            "_self"
-                          );
-                        }}
-                        // href="https://games.skormetaverse.io/g/SkJf58Ouf0"
-                      >
-                        <img
-                          src="https://static.gamezop.com/SkJf58Ouf0/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Dribble Kings</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/Skz4pzkDqyX",
-                            "_self"
-                          );
-                        }}
-                        //  href="https://games.skormetaverse.io/g/Skz4pzkDqyX"
-                      >
-                        <img
-                          src="https://static.gamezop.com/Skz4pzkDqyX/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Escape Run</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/H1AN6fkwqJ7",
-                            "_self"
-                          );
-                        }}
-                        //  href="https://games.skormetaverse.io/g/H1AN6fkwqJ7"
-                      >
-                        <img
-                          src="https://static.gamezop.com/H1AN6fkwqJ7/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Bubble Wipeout</p>
-                    </div>
-                    <div>
-                      <a
-                        onClick={() => {
-                          window.open(
-                            "https://games.skormetaverse.io/g/B1JBaM1D9y7",
-                            "_self"
-                          );
-                        }}
-                        // href="https://games.skormetaverse.io/g/B1JBaM1D9y7"
-                      >
-                        <img
-                          src="https://static.gamezop.com/B1JBaM1D9y7/cover.jpg"
-                          className="img-fluid w-100"
-                        />
-                      </a>
-                      <p>Colour Chase</p>
-                    </div>
-                  </Slider>
-                </Col>
-              </Row>
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Action</h2>
-                    <p
-                      onClick={() => {
-                        navigate("/playindmobgame", {
-                          state: { viewAllData: actionData, tagName: "Action" },
-                        });
-                      }}
-                    >
-                      View all
-                    </p>
-                  </div>
-
-                  <Slider className="slider-game" {...settings}>
-                    {actionData !== undefined && actionData.length > 0 ? (
-                      actionData.map((items, index) => {
-                        return (
-                          <div>
-                            <a
-                              onClick={() => {
-                                window.open(
-                                  `https://games.skormetaverse.io/g/${items.code}`,
-                                  "_self"
-                                );
-                              }}
-                              // href={`https://games.skormetaverse.io/g/${items.code}`}
-                            >
-                              <img
-                                src={items.assets.cover}
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <p>{items.name.en}</p>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <></>
-                    )}
-                  </Slider>
-                </Col>
-              </Row>
-
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Adventure</h2>
-                    <p
-                      onClick={() => {
-                        navigate("/playindmobgame", {
-                          state: {
-                            viewAllData: adventureData,
-                            tagName: "Adventure",
-                          },
-                        });
-                      }}
-                    >
-                      View all
-                    </p>
-                  </div>
-
-                  <Slider className="slider-game" {...settings}>
-                    {adventureData !== undefined && adventureData.length > 0 ? (
-                      adventureData.map((items, index) => {
-                        return (
-                          <div>
-                            <a
-                              onClick={() => {
-                                window.open(
-                                  `https://games.skormetaverse.io/g/${items.code}`,
-                                  "_self"
-                                );
-                              }}
-                              // href={`https://games.skormetaverse.io/g/${items.code}`}
-                            >
-                              <img
-                                src={items.assets.cover}
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <p>{items.name.en}</p>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <></>
-                    )}
-                  </Slider>
-                </Col>
-              </Row>
-
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Sports & Racing</h2>
-                    <p
-                      onClick={() => {
-                        navigate("/playindmobgame", {
-                          state: {
-                            viewAllData: sportsData,
-                            tagName: "Sports & Racing",
-                          },
-                        });
-                      }}
-                    >
-                      View all
-                    </p>
-                  </div>
-
-                  <Slider className="slider-game" {...settings}>
-                    {sportsData !== undefined && sportsData.length > 0 ? (
-                      sportsData.map((items, index) => {
-                        return (
-                          <div>
-                            <a
-                              onClick={() => {
-                                window.open(
-                                  `https://games.skormetaverse.io/g/${items.code}`,
-                                  "_self"
-                                );
-                              }}
-                              //  href={`https://games.skormetaverse.io/g/${items.code}`}
-                            >
-                              <img
-                                src={items.assets.cover}
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <p>{items.name.en}</p>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <></>
-                    )}
-                  </Slider>
-                </Col>
-              </Row>
-
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Puzzle & Logic</h2>
-                    <p
-                      onClick={() => {
-                        navigate("/playindmobgame", {
-                          state: {
-                            viewAllData: logicData,
-                            tagName: "Puzzle & Logic",
-                          },
-                        });
-                      }}
-                    >
-                      View all
-                    </p>
-                  </div>
-
-                  <Slider className="slider-game" {...settings}>
-                    {logicData !== undefined && logicData.length > 0 ? (
-                      logicData.map((items, index) => {
-                        return (
-                          <div>
-                            <a
-                              onClick={() => {
-                                window.open(
-                                  `https://games.skormetaverse.io/g/${items.code}`,
-                                  "_self"
-                                );
-                              }}
-                              //  href={`https://games.skormetaverse.io/g/${items.code}`}
-                            >
-                              <img
-                                src={items.assets.cover}
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <p>{items.name.en}</p>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <></>
-                    )}
-                  </Slider>
-                </Col>
-              </Row>
-
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Strategy</h2>
-                    <p
-                      onClick={() => {
-                        navigate("/playindmobgame", {
-                          state: {
-                            viewAllData: strategyData,
-                            tagName: "Strategy",
-                          },
-                        });
-                      }}
-                    >
-                      View all
-                    </p>
-                  </div>
-
-                  <Slider className="slider-game" {...settings}>
-                    {strategyData !== undefined && strategyData.length > 0 ? (
-                      strategyData.map((items, index) => {
-                        return (
-                          <div>
-                            <a
-                              onClick={() => {
-                                window.open(
-                                  `https://games.skormetaverse.io/g/${items.code}`,
-                                  "_self"
-                                );
-                              }}
-                              //  href={`https://games.skormetaverse.io/g/${items.code}`}
-                            >
-                              <img
-                                src={items.assets.cover}
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <p>{items.name.en}</p>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <></>
-                    )}
-                  </Slider>
-                </Col>
-              </Row>
-
-              <Row className="align-items-center">
-                <Col md="12">
-                  <div className="play-heading">
-                    <h2 className="text-white text-center">Arcade</h2>
-                    <p
-                      onClick={() => {
-                        navigate("/playindmobgame", {
-                          state: { viewAllData: arcadeData, tagName: "Arcade" },
-                        });
-                      }}
-                    >
-                      View all
-                    </p>
-                  </div>
-
-                  <Slider className="slider-game" {...settings}>
-                    {arcadeData !== undefined && arcadeData.length > 0 ? (
-                      arcadeData.map((items, index) => {
-                        return (
-                          <div>
-                            <a
-                              onClick={() => {
-                                window.open(
-                                  `https://games.skormetaverse.io/g/${items.code}`,
-                                  "_self"
-                                );
-                              }}
-                              // href={`https://games.skormetaverse.io/g/${items.code}`}
-                            >
-                              <img
-                                src={items.assets.cover}
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <p>{items.name.en}</p>
-                          </div>
-                        );
-                      })
-                    ) : (
-                      <></>
-                    )}
-                  </Slider>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-        ) : (
-          <></>
-        )}
-
-        {/* for mobile view */}
-
-        {forMobileView === false ? (
+     {disable === true ? <div className="loader-show"><IphoneSpinner/></div> : <></>}
           <section className="hexa-tile-sec new-box-benefit ">
             <Container>
               <div className="blogs-sec-new play-sec-new">
                 <Row className="">
                   <Col lg={12}>
-                    <Row className="filter-inner-prediction">
-                      <Col lg={12} className="content_center">
-                        <Row className="justify-content-between">
-                          <h2 className="text-white">Top Games</h2>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/S1Wrpf1v5ym",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/S1Wrpf1v5ym/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Box Crush</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Puzzle & Logic</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/S1Wrpf1v5ym",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/S1Wrpf1v5ym"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Clear rows and columns before the numbers get to
-                                0. Keep an eye on the progress bar to unlock
-                                special power ups!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/HJP4afkvqJQ",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/HJP4afkvqJQ/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>City Cricket</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Sports & Racing</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/HJP4afkvqJQ",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/HJP4afkvqJQ"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Pick your city, bring out your batting gloves
-                                and show your Cricket skills. Let's see you
-                                chase that target!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/B1fSpMkP51m",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/B1fSpMkP51m/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Bottle Shoot</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Action</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/B1fSpMkP51m",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/B1fSpMkP51m"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Bring out the cowboy in you and keep a level
-                                head while you shoot down as many bottles as you
-                                can. Keep an eye out for the red ones!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/H1Tz6z1Dqym",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/H1Tz6z1Dqym/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Bouncy</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Arcade</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/H1Tz6z1Dqym",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/H1Tz6z1Dqym"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Bounce off the platforms and make as many jumps
-                                as you can in this amazing 3D game!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/BkdJhTX50B",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/BkdJhTX50B/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Bowling Stars</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Sports & Racing</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/BkdJhTX50B",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/BkdJhTX50B"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Enjoy the best Bowling game online — compete
-                                with thousands of players! Let's see how many
-                                pins you can knock down!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/SkJf58Ouf0",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/SkJf58Ouf0/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Dribble Kings</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Sports & Racing</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/SkJf58Ouf0",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/SkJf58Ouf0"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Run and find the best trajectory to dodge
-                                obstacles. Don't let those quarterbacks take the
-                                ball!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/Skz4pzkDqyX",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/Skz4pzkDqyX/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Escape Run</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Adventure</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/Skz4pzkDqyX",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/Skz4pzkDqyX"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Help the mountain man escape the eyes of media
-                                while he peacefully runs in the cold. Collect
-                                fruits to buy power-ups for the escape!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/H1AN6fkwqJ7",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/H1AN6fkwqJ7/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Bubble Wipeout</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Strategy</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/H1AN6fkwqJ7",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/H1AN6fkwqJ7"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                Shoot down as many bubbles as you can - aim,
-                                match, shoot and burst the same colored bubbles.
-                                There is a timer to watch out for!
-                              </p>
-                            </div>
-                          </Col>
-                          <Col lg={4}>
-                            <div className="blog-inner-box">
-                              <img
-                                style={{ cursor: "pointer" }}
-                                onClick={() => {
-                                  window.open(
-                                    "https://6297.play.gamezop.com/g/B1JBaM1D9y7",
-                                    "_self"
-                                  );
-                                }}
-                                src="https://static.gamezop.com/B1JBaM1D9y7/cover.jpg"
-                                className="img-fluid"
-                              />
-                              <h4>Colour Chase</h4>
-                              <div className="d-flex justify-content-between align-items-center mb-1">
-                                <p className="mb-0">Adventure</p>
-                                <a
-                                  onClick={() => {
-                                    window.open(
-                                      "https://6297.play.gamezop.com/g/B1JBaM1D9y7",
-                                      "_self"
-                                    );
-                                  }}
-                                  // href="https://6297.play.gamezop.com/g/B1JBaM1D9y7"
-                                  className="common-play-btn"
-                                >
-                                  Play
-                                </a>
-                              </div>
-                              <p>
-                                See beautiful landscapes unfold as you navigate
-                                the twists and turns of these endless roads:
-                                just make sure you only clash with balls of your
-                                own colour.
-                              </p>
-                            </div>
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
-          </section>
-        ) : (
-          <></>
-        )}
-        {forMobileView === false ? (
-          <section className="hexa-tile-sec new-box-benefit ">
-            <Container>
-              <div className="blogs-sec-new play-sec-new">
-                <Row className="">
-                  <Col lg={12}>
-                    <Row className="underline">
-                      <Col lg={1}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("");
-                          }}
-                          className="extra-links"
-                        >
-                          All
-                        </a>
-                      </Col>
-                      <Col lg={1}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("Action");
-                          }}
-                          className="extra-links"
-                        >
-                          Action
-                        </a>
-                      </Col>
-                      <Col lg={2}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("Adventure");
-                          }}
-                          className="extra-links"
-                        >
-                          Adventure
-                        </a>
-                      </Col>
-                      <Col lg={2}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("Sports & Racing");
-                          }}
-                          className="extra-links"
-                        >
-                          Sports&Racing
-                        </a>
-                      </Col>
-                      <Col lg={2}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("Puzzle & Logic");
-                          }}
-                          className="extra-links"
-                        >
-                          Puzzle&Logic
-                        </a>
-                      </Col>
-                      <Col lg={2}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("Strategy");
-                          }}
-                          className="extra-links"
-                        >
-                          Strategy
-                        </a>
-                      </Col>
-                      <Col lg={2}>
-                        <a
-                          style={{ cursor: "pointer" }}
-                          onClick={() => {
-                            setFilterData("Arcade");
-                          }}
-                          className="extra-links"
-                        >
-                          Arcade
-                        </a>
-                      </Col>
-                    </Row>
                     <Row className="">
-                      {gameData !== undefined && gameData.length > 0
-                        ? gameData.map((items, index) => {
+                      {Games?.Games !== undefined && Games?.Games?.length > 0
+                        ? Games?.Games?.map((items, index) => {
                             return (
                               <Col lg={4} key={index}>
                                 <div className="blog-inner-box">
                                   <img
-                                    style={{ cursor: "pointer" }}
-                                    onClick={() => {
-                                      TransferData(items);
-                                    }}
-                                    src={items.assets.cover}
+                                    src="https://mascot.games/images/game_hellowin.jpeg"
                                     className="img-fluid"
                                   />
-                                  <h4>{items.name.en}</h4>
+                                  <h4>{items.Name}</h4>
                                   <div className="d-flex justify-content-between align-items-center mb-1">
-                                    <p className="mb-0">
-                                      {items.categories.en}
-                                    </p>
+                                    <p className="mb-0">{items.Type}</p>
                                     <a
                                       onClick={() => {
                                         TransferData(items);
@@ -1098,7 +199,7 @@ export const HomePage = () => {
                                       Play
                                     </a>
                                   </div>
-                                  <p>{items.description.en}</p>
+                                  <p>{items.Description}</p>
                                 </div>
                               </Col>
                             );
@@ -1110,63 +211,9 @@ export const HomePage = () => {
               </div>
             </Container>
           </section>
-        ) : (
-          <></>
-        )}
+     
+     
       </div>
-
-      <Modal
-        show={commonModel}
-        onHide={handleCommonModel}
-        backdrop="static"
-        keyboard={false}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        size="sm"
-        className="welcome-modal compitition-modal"
-        style={{}}
-      >
-        <Modal.Header closeButton={handleCommonModel}></Modal.Header>
-        <Modal.Body>
-          <div className="winner-box-new">
-            <img className="cup-img" src="assets/img/trophy.png" alt="" />
-            <div className="mb-3">
-              <a
-                className="common-btn"
-                onClick={() => {
-                  navigate("/Register");
-                }}
-                style={{ cursor: "pointer" }}
-              >
-                Sign Up{" "}
-              </a>{" "}
-              <a
-                className="common-btn"
-                onClick={() => {
-                  navigate("/Login");
-                }}
-                style={{ cursor: "pointer" }}
-              >
-                {" "}
-                Login{" "}
-              </a>
-            </div>
-            <h4 className="text-white text-center" style={{ fontSize: "30px" }}>
-              Today to play free games and be entered into our free prizes &
-              competition
-            </h4>
-            <p
-              style={{ cursor: "pointer", color: "#0089ff" }}
-              onClick={() => {
-                navigate("/monthly_reffle");
-              }}
-            >
-              {" "}
-              learn more about free Prizes & Competition
-            </p>
-          </div>
-        </Modal.Body>
-      </Modal>
     </>
   );
 };
