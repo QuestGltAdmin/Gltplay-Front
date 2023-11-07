@@ -198,9 +198,10 @@ export const HomePage = () => {
                                   }
                                   className="img-fluid"
                                 />
-                                <h4>{items.Name}</h4>
-                                <div className="d-flex justify-content-center align-items-center mb-1">
+                                
+                                <div className="d-flex flex-game align-items-center mb-1">
                                   {/* <p className="mb-0"></p> */}
+                                  <h4>{items.Name}</h4>
                                   <a
                                     onClick={() => {
                                       TransferData(items);

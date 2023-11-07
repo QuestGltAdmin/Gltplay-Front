@@ -74,8 +74,14 @@ body{
     width: 100%;
     object-fit: fill;
 }
+.d-flex.flex-game{
+    justify-content: space-between;
+}
 .blog-inner-box h4 {
     color: #002e5b;
+    max-width: 70%;
+    margin-bottom: 0;
+    font-size: 20px;
 }
 .blog-inner-box p {
     font-size: 16px;
