@@ -188,7 +188,7 @@ export const HomePage = () => {
                     {Games?.Games !== undefined && Games?.Games?.length > 0
                       ? Games?.Games?.map((items, index) => {
                           return (
-                            <Col lg={4} key={index}>
+                            <Col lg={4} md={4} sm={6} xs={6} key={index}>
                               <div className="blog-inner-box">
                                 <img
                                   src={

@@ -389,4 +389,33 @@ body{
         min-height: 40vh;
         line-height: 0;
     }
+    .play-sec-new {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+    .blog-inner-box img {
+        margin-bottom: 15px;
+        height: 100px;
+    }
+    .d-flex.flex-game {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+    }
+    .blog-inner-box h4 {
+        color: #002e5b;
+        max-width: 100%;
+        margin-bottom: 0;
+        font-size: 12px;
+        min-height: 38px;
+    }
+    .common-play-btn {
+        font-size: 12px !important;
+        line-height: 18px !important;
+    }
+    .blog-inner-box {
+        margin-bottom: 15px;
+    }
 }
