@@ -70,7 +70,8 @@
             "Description": "5*4, 40 Lines, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_merlin.jpeg"
         },
         {
             "Id": "purple_pills",
@@ -78,7 +79,8 @@
             "Description": "10 Lines, 2 way pay, Respin",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_purplepills.jpeg"
         },
         {
             "Id": "robin_of_loxley",
@@ -87,7 +89,7 @@
             "SectionId": "mascot",
             "Type": "slots",
             "Format": "html",
-            "imageurl": ""
+            "imageurl": "https://mascot.games/images/game_robin.jpeg"
         },
         {
             "Id": "riot",
@@ -96,7 +98,7 @@
             "SectionId": "mascot",
             "Type": "slots",
             "Format": "html",
-            "imageurl": "https://mascot.games/images/game_riot2.jpeg"
+            "imageurl": "https://mascot.games/images/game_riot.jpeg"
         },
         {
             "Id": "bamboo_bear",
@@ -112,7 +114,8 @@
             "Description": "BJ, Card Game, 3 Hands",
             "SectionId": "mascot",
             "Type": "casino",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_blackjack.jpeg"
         },
         {
             "Id": "baccarat_mg",
@@ -120,7 +123,8 @@
             "Description": "Card Games",
             "SectionId": "mascot",
             "Type": "casino",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_baccarat.jpeg"
         },
         {
             "Id": "gemz_grow",
@@ -128,7 +132,8 @@
             "Description": "243-3125 ways, Free*5",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_gemz.jpeg"
         },
         {
             "Id": "red_horde",
@@ -136,7 +141,8 @@
             "Description": "15 Lines, Modifiers, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_horde.jpeg"
         },
         {
             "Id": "wild_spirit",
@@ -152,7 +158,8 @@
             "Description": "10 Lines, 2 way pay, Respin",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fruitvegas.jpeg"
         },
         {
             "Id": "gryphons_castle",
@@ -160,7 +167,8 @@
             "Description": "20 Lines, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_gryphon.jpeg"
         },
         {
             "Id": "amaterasu_keno",
@@ -192,7 +200,8 @@
             "Description": "25 Lines, Wild Features, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_legioner.jpeg"
         },
         {
             "Id": "bennys_the_biggest_game",
@@ -200,7 +209,8 @@
             "Description": "20 Lines, Free, Bonus",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_benny.jpeg"
         },
         {
             "Id": "aloha_tiki_bar",
@@ -208,7 +218,8 @@
             "Description": "3600 ways, respins",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_aloha.jpeg"
         },
         {
             "Id": "merry_scary_christmas",
@@ -216,7 +227,8 @@
             "Description": "10 Lines, Free, Features, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_merry-scary-christmas.jpeg"
         },
         {
             "Id": "prince_of_persia_tgop",
@@ -232,7 +244,8 @@
             "Description": "10 Lines, 4*Free, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_myth.jpeg"
         },
         {
             "Id": "bastet_and_cats",
@@ -240,7 +253,8 @@
             "Description": "40 Lines, Free, Avalanches, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_bastet.jpeg"
         },
         {
             "Id": "zeus_the_thunderer",
@@ -249,7 +263,7 @@
             "SectionId": "mascot",
             "Type": "slots",
             "Format": "html",
-            "imageurl": "https://mascot.games/images/game_zeusdeluxe.jpeg"
+            "imageurl": "https://mascot.games/images/game_zeus.jpeg"
 
         },
         {
@@ -258,7 +272,8 @@
             "Description": "15 Lines, 2 way pay, Respin",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_luxor.jpeg"
         },
         {
             "Id": "twin_fruits_of_olympus",
@@ -266,7 +281,8 @@
             "Description": "1024 Way, Twin Reel",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_olymp.jpeg"
         },
         {
             "Id": "queen_of_spades",
@@ -274,7 +290,8 @@
             "Description": "10 Lines, Free, Bonus, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_queenofspades.jpeg"
         },
         {
             "Id": "3_corsairs",
@@ -290,7 +307,8 @@
             "Description": "9 Lines, Free, Multipliers",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_macau.jpeg"
         },
         {
             "Id": "fruit_monaco",
@@ -298,7 +316,8 @@
             "Description": "15 Lines, Free, Wilds",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_monaco.jpeg"
         },
         {
             "Id": "book_of_amaterasu",
@@ -314,7 +333,8 @@
             "Description": "15 Lines, Risk'n'Buy, 3*Features",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fairytale.jpeg"
         },
         {
             "Id": "twin_fruits_of_santa",
@@ -322,7 +342,8 @@
             "Description": "1024 Way, Twin Reel",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_santa.jpeg"
         },
         {
             "Id": "for_the_realm",
@@ -338,7 +359,8 @@
             "Description": "6*6 rockways, avalanche, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_primalbet.jpeg"
         },
         {
             "Id": "dragons_nest",
@@ -346,7 +368,8 @@
             "Description": "10 Lines, Free, Features, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_dragonsnest.jpeg"
         },
         {
             "Id": "pinup_dolls",
@@ -354,7 +377,8 @@
             "Description": "15 Lines, Free, Bonus, WReels, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_pinup.jpeg"
         },
         {
             "Id": "the_evil_bet",
@@ -362,7 +386,8 @@
             "Description": "15 Lines, Modifiers, Free, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_evilbet.jpeg"
         },
         {
             "Id": "cleopatras_gems_rockways",
@@ -397,7 +422,8 @@
             "Description": "Card Games",
             "SectionId": "mascot",
             "Type": "casino",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_holdem.jpeg"
         },
         {
             "Id": "mayan_riches_rockways",
@@ -405,7 +431,8 @@
             "Description": "6*6 rockways, avalanche, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_mayan.jpeg"
         },
         {
             "Id": "riot_2_bnb",
@@ -413,7 +440,8 @@
             "Description": "50 Lines, Free, Risk'n'Buy, 2*Features",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_riot2.jpeg"
         },
         {
             "Id": "fruit_disco_ms",
@@ -573,7 +601,8 @@
             "Description": "3600 ways, respins",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_aloha.jpeg"
         },
         {
             "Id": "dice_of_luxor",
@@ -674,7 +703,8 @@
             "Description": "20 Lines, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_zeusdeluxe.jpeg"
         }
     ]
 }
