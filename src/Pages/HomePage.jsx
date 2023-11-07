@@ -153,7 +153,7 @@ export const HomePage = () => {
         {/* <Header /> */}
         <section className="play-banner-sec">
           <video className="video-new-game" muted autoPlay loop>
-                <source src="assets/img/headvideo-bastet.mp4" />    
+            <source src="assets/img/headvideo-bastet.mp4" />
           </video>
           <Container>
             <Row className="align-items-center">
@@ -172,50 +172,58 @@ export const HomePage = () => {
           </Container>
         </section>
 
-     {disable === true ? <div className="loader-show"><IphoneSpinner/></div> : <></>}
-          <section className="hexa-tile-sec new-box-benefit ">
-            <Container>
-              <div className="blogs-sec-new play-sec-new">
-                <Row className="">
-                  <Col lg={12}>
-                    <Row className="">
-                      {Games?.Games !== undefined && Games?.Games?.length > 0
-                        ? Games?.Games?.map((items, index) => {
-                            return (
-                              <Col lg={4} key={index}>
-                                <div className="blog-inner-box">
-                                  <img
-                                    src="https://mascot.games/images/game_hellowin.jpeg"
-                                    className="img-fluid"
-                                  />
-                                  <h4>{items.Name}</h4>
-                                  <div className="d-flex justify-content-between align-items-center mb-1">
-                                    <p className="mb-0">{items.Type}</p>
-                                    <a
-                                      onClick={() => {
-                                        TransferData(items);
-                                      }}
-                                      // href={items.url}
-                                      // target="_blank"
-                                      className="common-play-btn"
-                                    >
-                                      Play
-                                    </a>
-                                  </div>
-                                  <p>{items.Description}</p>
+        {disable === true ? (
+          <div className="loader-show">
+            <IphoneSpinner />
+          </div>
+        ) : (
+          <></>
+        )}
+        <section className="hexa-tile-sec new-box-benefit ">
+          <Container>
+            <div className="blogs-sec-new play-sec-new">
+              <Row className="">
+                <Col lg={12}>
+                  <Row className="">
+                    {Games?.Games !== undefined && Games?.Games?.length > 0
+                      ? Games?.Games?.map((items, index) => {
+                          return (
+                            <Col lg={4} key={index}>
+                              <div className="blog-inner-box">
+                                <img
+                                  src={
+                                    items?.imageurl
+                                      ? items?.imageurl
+                                      : "https://mascot.games/images/game_hellowin.jpeg"
+                                  }
+                                  className="img-fluid"
+                                />
+                                <h4>{items.Name}</h4>
+                                <div className="d-flex justify-content-between align-items-center mb-1">
+                                  <p className="mb-0">{items.Type}</p>
+                                  <a
+                                    onClick={() => {
+                                      TransferData(items);
+                                    }}
+                                    // href={items.url}
+                                    // target="_blank"
+                                    className="common-play-btn"
+                                  >
+                                    Play
+                                  </a>
                                 </div>
-                              </Col>
-                            );
-                          })
-                        : ""}
-                    </Row>
-                  </Col>
-                </Row>
-              </div>
-            </Container>
-          </section>
-     
-     
+                                <p>{items.Description}</p>
+                              </div>
+                            </Col>
+                          );
+                        })
+                      : ""}
+                  </Row>
+                </Col>
+              </Row>
+            </div>
+          </Container>
+        </section>
       </div>
     </>
   );

@@ -86,7 +86,8 @@
             "Description": "20 Lines, Free, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": ""
         },
         {
             "Id": "riot",
@@ -94,7 +95,8 @@
             "Description": "15 Lines, Risk'n'Buy, 3*Features",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_riot2.jpeg"
         },
         {
             "Id": "bamboo_bear",
@@ -246,7 +248,9 @@
             "Description": "20 Lines, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_zeusdeluxe.jpeg"
+
         },
         {
             "Id": "fruits_of_luxor",
@@ -366,7 +370,8 @@
             "Description": "6*6 rockways, avalanche, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_cleogems.jpeg"
         },
         {
             "Id": "candy_crush",
@@ -374,7 +379,8 @@
             "Description": "6*5 rockways, avalanche, Free, features, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_candycrush.jpeg"
         },
         {
             "Id": "across_the_universe",
@@ -382,7 +388,8 @@
             "Description": "20 Lines, Free, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_universe.jpeg"
         },
         {
             "Id": "holdem_mg",
@@ -414,7 +421,8 @@
             "Description": "20 lines, Twin Reel",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fruitdisco.jpeg"
         },
         {
             "Id": "double_triple_fruits",
@@ -422,7 +430,8 @@
             "Description": "5*3, 15 Lines",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_dtfruits.jpeg"
         },
         {
             "Id": "princess_and_dwarfs_rockways",
@@ -430,7 +439,8 @@
             "Description": "6*6 rockways, avalanche, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_princess.jpeg"
         },
         {
             "Id": "loot_the_train",
@@ -438,7 +448,8 @@
             "Description": "20 Lines, Bonus",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_train.jpeg"
         },
         {
             "Id": "deepsea_riches",
@@ -446,7 +457,8 @@
             "Description": "20 Lines, Freespins",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_deepsea.jpeg"
         },
         {
             "Id": "hydras_lair",
@@ -454,7 +466,8 @@
             "Description": "20 Lines, Freespins, wild feature",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_hydra.jpeg"
         },
         {
             "Id": "wildlife_riches",
@@ -462,7 +475,8 @@
             "Description": "1024 ways, Bonus",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_wildlife.jpeg"
         },
         {
             "Id": "the_candy_keno",
@@ -470,7 +484,8 @@
             "Description": "20/80 Balls, Extra balls",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_candykeno.jpeg"
         },
         {
             "Id": "la_fiesta_de_muertos",
@@ -478,7 +493,8 @@
             "Description": "15 lines, respins, bonus",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fiesta.jpeg"
         },
         {
             "Id": "greedy_greenskins_rockways",
@@ -486,7 +502,8 @@
             "Description": "6*6 rockways, avalanche, Free",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_greenskins.jpeg"
         },
         {
             "Id": "cleopatras_gems_bingo",
@@ -502,7 +519,8 @@
             "Description": "6*3, 25 lines, bonus, freespins",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_trump.jpeg"
         },
         {
             "Id": "fruit_machine_x25",
@@ -510,7 +528,8 @@
             "Description": "5*3, 20 Lines, freespins",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fruitmachine.jpeg"
         },
         {
             "Id": "easter_luck",
@@ -518,7 +537,8 @@
             "Description": "3600 ways, respins",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_easter.jpeg"
         },
         {
             "Id": "hook_up_fishing_wars",
@@ -526,7 +546,8 @@
             "Description": "",
             "SectionId": "mascot",
             "Type": "casino",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fmmegabonus.jpeg"
         },
         {
             "Id": "fruit_machine_megabonus",
@@ -534,7 +555,8 @@
             "Description": "5*3, 10 lines, bonus",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_fmmegabonus.jpeg"
         },
         {
             "Id": "rocket_chimp_jackpot",
@@ -542,7 +564,8 @@
             "Description": "5*3, 243 ways, freespins, jp",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_rocketchimp.jpeg"
         },
         {
             "Id": "aloha_tiki_bar_dice",
@@ -590,7 +613,8 @@
             "Description": "10 Lines, Bonus",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_bengunn.jpeg"
         },
         {
             "Id": "paper_lanterns_crash_game",
@@ -598,7 +622,8 @@
             "Description": "5 Bets",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_lantern.jpeg"
         },
         {
             "Id": "wild_phoenix_rises",
@@ -606,7 +631,8 @@
             "Description": "25 Lines, free, rnb2",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_phoenix2.jpeg"
         },
         {
             "Id": "the_pendragon_legend",
@@ -614,7 +640,8 @@
             "Description": "20 Lines, Free, Risk-n-Buy",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_pendragon.jpeg"
         },
         {
             "Id": "minotaurs_wilds",
@@ -622,7 +649,8 @@
             "Description": "10 Lines, Free & Feature, rnb2",
             "SectionId": "mascot",
             "Type": "slots",
-            "Format": "html"
+            "Format": "html",
+            "imageurl": "https://mascot.games/images/game_minotaur.jpeg"
         },
         {
             "Id": "hello_win",
