@@ -152,6 +152,9 @@ export const HomePage = () => {
       <div className="outer-main-sec">
         {/* <Header /> */}
         <section className="play-banner-sec">
+          <video className="video-new-game" muted autoPlay loop>
+                <source src="assets/img/headvideo-bastet.mp4" />    
+          </video>
           <Container>
             <Row className="align-items-center">
               <Col md="7" className="m-auto">
